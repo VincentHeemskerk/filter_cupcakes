@@ -28,6 +28,7 @@ filterdiv.querySelectorAll('.sortBtn > .btn').forEach(item => {
 });
 
 const filterItemsByString = (filter) => {
+    resetFilters();
     const names = document.querySelectorAll('#store-item-name');
     names.forEach(item => {
         console.log(item.innerHTML);
@@ -41,7 +42,6 @@ const filterItemsByString = (filter) => {
 (() => {
     const searchBar = document.querySelector('#searchbar');
     searchBar.addEventListener('input', event => {
-        resetFilters();
         let searchString = searchBar.value;
         filterItemsByString(searchString);
     });
